@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	iframe{
+		width:95%;
+		height:400px;
+	}
+</style>
+</head>
+<body>
+	<div id="status">로딩 상태</div>
+	<iframe src = "http://www.daum.net"></iframe>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("iframe").on("load", function(){
+			alert("daum 로딩 완료!");
+		});
+		$(window).on("scroll",function(){
+			let scrollHeight = $(window).scrollTop()+$(window).height();
+			let docHeight = $(document).height();
+			if(scrollHeight == docHeight-200){
+				$("iframe").clone().appendTo("body");
+			}
+		});
+		
+	});
+</script>
+</html>

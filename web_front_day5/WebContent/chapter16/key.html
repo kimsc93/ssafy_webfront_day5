@@ -26,7 +26,16 @@
 			}
 			$("#cnt").val(len);		
 		});
-		
+
+		$("#name").on("keydown", function(e) {
+			console.log("키 눌림" +e.keyCode);	//e = 입력한 키의 정보 저장
+			if(e.keyCode===13){
+				$("button").trigger("click");
+			}
+		});
+		$("button").on("click", function() {
+			alert("서버로 전송합니다.");
+		});
 		
 	});
 </script>
