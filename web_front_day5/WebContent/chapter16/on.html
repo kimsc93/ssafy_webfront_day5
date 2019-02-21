@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Header-0</h1>
+	<h1>Header-1</h1>
+	<h1>Header-2</h1>	
+	<button>한번만..</button>
+	
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("h1").on("click",function(){
+			console.log(this.innerHTML);
+			console.log($(this).html());
+		});
+		$('h1').on({
+			mouseenter:function(){
+				//이벤트 callback에서의 this = event source =dom
+				this.style.color="red";
+			},
+			mouseleave:function(){
+				$(this).css("color","black");
+			}
+		});
+		$("button").one("dblclick",function(){
+			alert("두번 누르지마");
+		});
+	});
+</script>
+</html>

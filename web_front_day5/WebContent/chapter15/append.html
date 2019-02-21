@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="target">
+		<h2>기존 값</h2>
+	</div>
+	<h2 id="old">원래 값</h2>
+	<button id="append">append</button>
+	<button id="prepend">prepend</button>
+	<button id="before">before</button>
+	<button id="after">after</button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		
+		$("#append").on("click",function(){
+			//새로운 요소 생성 후 추가해보기
+			$("<h2>새로운 값</h2>").appendTo("#target");
+		});
+		$("#prepend").on("click",function(){
+			//새로운 요소 생성 후 추가해보기
+			$("#old").prependTo("#target");
+		});
+		$("#before").on("click",function(){
+			//새로운 요소 생성 후 추가해보기
+			$("<hr>").insertBefore("#target");
+		});
+		$("#after").on("click",function(){
+			//새로운 요소 생성 후 추가해보기
+			$("<hr>").insertAfter("#target");
+		});
+		
+	});
+</script>
+</html>
