@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" id="id" name="id" placeholder="4글자">
+	<input type="text" id="name" name="name" placeholder="4글자">
+	<button>체크</button>
+	<br>
+	<label>입력 글자 수 : </label> 
+	<input type="text" id="cnt">
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		//input 요소의 값을 가져올 때 dom : value, 제이쿼리 : val()
+		$("#id").on("keyup",function(){
+			
+			let len = $(this).val().length;
+			if(len>4){
+				alert("4글자까지만 입력하세요");
+				$(this).val($(this).val().substr(0,4));
+				len =4;
+			}
+			$("#cnt").val(len);		
+		});
+		
+		
+	});
+</script>
+</html>
