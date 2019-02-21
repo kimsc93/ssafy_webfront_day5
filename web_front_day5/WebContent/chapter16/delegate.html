@@ -21,6 +21,10 @@
 			console.log(this);
 			$("<button>추가</button>").insertAfter($(this));
 		});
+		//trigger : 이벤트 강제 발생
+		$("#buttongroup").on("mouseenter","button",function(){
+			$(this).trigger("click");
+		});
 	});
 </script>
 </html>
