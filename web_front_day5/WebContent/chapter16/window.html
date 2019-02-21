@@ -23,8 +23,9 @@
 		$(window).on("scroll",function(){
 			let scrollHeight = $(window).scrollTop()+$(window).height();
 			let docHeight = $(document).height();
-			if(scrollHeight == docHeight-200){
+			if(scrollHeight > docHeight-200){
 				$("iframe").clone().appendTo("body");
+				
 			}
 		});
 		
