@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./css/common.css">
+<style>
+.poster{
+	width:400px;
+	height:600px;
+	padding:10px;
+	margin:10px;
+
+}
+.timeselect{
+	width:450px;
+}
+/* .font_test1{ */
+/* 	text-decoration:line-through; */
+/* } */
+/* .font_test2{ */
+/* 	text-decoration:underline; */
+/* } */
+</style>
+</head>
+<body>
+	<div id="container">
+		<div id="head">
+			<h1 >영화 예매</h1>
+				
+		</div>
+		<div id="content">
+			<h2>쿵푸팬더</h2>	
+			<img class="poster" src="http://image.cine21.com/resize/cine21/poster/2015/1230/15_52_23__56837f2794e0d[X230,330].jpg">
+			<div class="fclear" id="movies">
+				<div class="fleft">상영관</div>
+				<div class="fleft">&nbsp;</div>
+				<div class="fleft">
+					<select>
+						<option>CGV
+						<option>메가박스
+						<option>롯데시네마
+					</select>
+				</div>
+				<div class="fleft">&nbsp;</div>
+				<div class="fleft">날짜 선택</div>
+				<div class="fleft">&nbsp;</div>
+				<input class="fleft" type="date" name="date">
+			</div>
+			<fieldset class="fclear timeselect">
+				<legend>시간선택</legend>
+				<div class="fleft">
+					<input type="radio" name="chk">08:30
+					<input type="radio" name="chk">11:00
+					<input type="radio" name="chk">14:20
+					<input type="radio" name="chk">17:25
+					<input type="radio" name="chk">20:10
+					<input type="radio" name="chk">23:05
+				</div>
+			</fieldset>
+			<br>
+			<div class="fclear" id="price">
+				<div class="fleft">요금</div>
+				<div class="fleft">&nbsp;</div>
+				<div class="fleft font_test1"></div>
+			</div>
+			<div class="fclear" id="person">
+				<div class="fleft">인원</div>
+				<div class="fleft">&nbsp;</div>
+				<input type ="number" name="id" style="text-align:right" min="0" placeholder="1"/>
+			</div>
+			<div class="fclear" id="money">
+				<div class="fleft">금액</div>
+				<div class="fleft">&nbsp;</div>
+				<input type ="text" name="id" style="text-align:right" min="0" placeholder="0"/>
+			</div>
+		</div>
+		<br>
+		<div id="footer">
+			<div class="fclear" id="option">
+				<input class = "fleft" type ="checkbox" name="hobby" id="hobby1"/>
+				<div class="fleft">옵션</div>
+				<fieldset class="fclear">
+					<input class = "fleft" type ="checkbox"/>
+					<div class="fleft">팝콘</div>
+					<input class = "fleft" type ="checkbox"/>
+					<div class="fleft">콜라</div>
+				</fieldset>
+			</div>			
+		</div>		
+	</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("input[type='number']").on("click", function() {
+			let va = $(".fleft.font_test2").html();
+			console.log(va);
+		});
+		$("input[type='radio']:first").on("click", function() {
+			$(".fleft.font_test1").html("W5000");
+		});
+		$("input[type='radio']:last-child").on("click", function() {
+			$(".fleft.font_test1").html("W9000");
+		});
+	});
+</script>
+</html>

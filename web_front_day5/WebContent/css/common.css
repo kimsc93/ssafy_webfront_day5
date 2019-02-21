@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+#container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.lnb>li {
+	display: inline-block;
+	width: 120px;
+}
+
+.lnb>li:hover {
+	background: black;
+	color: white;
+}
+
+.fleft {
+	float: left;
+}
+
+.fright {
+	float: right;
+}
+
+.fclear {
+	clear: both;
+}
