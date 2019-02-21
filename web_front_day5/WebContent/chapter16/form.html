@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="#" id="myform">
+		<input type = "text" id="id">
+		<input type = "password" id="pass1" placeholder="비밀번호">
+		<input type = "password" id="pass2" placeholder="비밀번호확인">
+		<br>
+		<input type = "checkbox" id="all" >
+		<label for="all">전체선택</label>
+		<br>
+		<input type = "checkbox" id="sleep" >
+		<label for="sleep">자기</label>
+		<input type = "checkbox" id="study" >
+		<label for="study">공부</label>
+		<br>
+		<select>
+			<option>서울
+			<option>광주
+			<option>대전
+		</select>
+		<input type ="submit"> 
+	</form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		//submit 이벤트	기본동작 :서버로 전송
+		$("#myform").on("submit",function(e){
+			//validation 처리 : pass1과 pass2의 값이 같을것
+			let p1 = $("#pass1").val();
+			let p2 = $("#pass2").val();
+			if(p1!=p2){
+				alert("비밀번호가 다릅니다.");
+				$("#pass1").focus();
+				//return false;	//구버전 전송막기
+				e.preventDefault();	//신버전 전송막기
+			}
+		});
+		//change 관련 이벤트
+		$("select").on("change",function(){
+			alert($(this).val());
+		});
+		$("#all").on("change",function(){
+			console.log($(this).prop("checked"));
+			$("#sleep, #study").prop("checked",$(this).prop("checked"));
+		});
+		//focus관련 이벤트
+		$("input").on({
+			focus:function(){
+				$(this).css("background","orange");
+			},
+			blur:function(){
+				$(this).css("background","white");
+			}
+		});	
+	});
+</script>
+</html>
