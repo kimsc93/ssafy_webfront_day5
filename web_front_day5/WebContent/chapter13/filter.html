@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="checkbox" name = "hobby" value = "1">
+	<input type="checkbox" name = "hobby" value = "2" checked="checked">
+	<input type="checkbox" name = "hobby" value = "3">
+	
+	<select>
+		<option value = "1">1
+		<option value = "2" selected="selected">2
+		<option value = "3">3
+	</select>
+</body>
+<!-- jquery를 설치하시오. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	//checkbox들만 골라보자!!
+	let checks = document.querySelectorAll("input[type= checkbox]:checked");//내부적으로 배열에 담아짐
+	console.log(checks.value);	
+	//선택자를 통해서 가져왔지만 이녀석은 Dom객체가 아닌jQuery객체
+	let $check = $("input[type=checkbox]:checked");		//jquery객체는 관습적으로 $를 붙임
+	$check  = $(":checked");
+	console.log($check.val());
+	//select에서 선택된 option은?
+	let selected = $("select > option:selected");
+	selected = $(":selected");
+	console.log(selected.val());	
+</script>
+</html>

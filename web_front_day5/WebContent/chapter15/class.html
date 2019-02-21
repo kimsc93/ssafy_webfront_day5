@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.redAccent{
+		color:red;
+	}
+	.blueAccent{
+		color:blue;
+	}
+</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>	
+	</ul>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$("li").addClass("redAccent");
+	$("li").addClass(function(idx,item){	//리턴 값의 형태는 그ㄸ그떄 원하는 곳마다 달라짐
+		if(idx%2==0){
+			return "redAccent";
+		}
+		else{
+			return "blueAccent";
+		}
+	});	
+</script>
+</html>
+
+<!-- 
+일반적으로 제이쿼리 함수들은
+1. 단순 값을 사용하는 형태 : html,text,val..
+조회 : 파라미터 x jqobject.html()
+설정 : 파라미터 O jqobject.html("newValue")
+2. 맵 계열의 값을 사용하는 형태 : prop, attr, css..
+조회 : 파라미터 key 값 jqobject.css("color")
+설정 : 파라미터 key,value값 jqobject.css("color","red")
+3. 값의 종류
+단순한 값: string, number, boolean
+여러개의 값 설정 : css 설정 등 : 객체 이용 : {키 : 값 , ...}
+프로그래밍 적으로 처리 : function(idx,item){..}
+ -->
