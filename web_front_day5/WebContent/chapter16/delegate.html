@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="buttongroup">
+		<button>클릭</button>
+	</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		//현재 DOM을 구성하고 있는 요소들에게만 이벤트 적용
+		/*
+		$("button").on("click",function(){
+			$("<button>추가</button>").insertAfter($(this));
+		});	*/
+		$("#buttongroup").on("click","button",function(){
+			console.log(this);
+			$("<button>추가</button>").insertAfter($(this));
+		});
+	});
+</script>
+</html>
