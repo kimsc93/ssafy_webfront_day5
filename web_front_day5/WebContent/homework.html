@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#container {
+		background-color: aqua;
+		width: 1200px;
+		height: 600px;
+	}
+	
+	#lotto {
+		border-radius: 60%;
+		background-color: yellow;
+		margin: 30px;
+		float: left;
+		text-align: center;
+		vertical-align: middle;
+		width: 70px;
+		height: 70px;
+		line-height: 70px;
+		display: inline-block;
+	}
+	div{
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<div><h1>대박을 기원합니다.</h1></div>
+	<button>start!</button>
+	<div id="container">
+		<div class = "row">
+			
+		</div>			
+	</div>	
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+// 	document.querySelector("button").addEventListener("click",function(){
+// 			let myLotto=[];		
+// 			let cnt=0;
+// 			let intervalId = setInterval(function(){					
+// 				let num = Math.floor(Math.random()*45)+1;	
+// 				if(myLotto.indexOf(num)===-1){
+// 					myLotto.push(num);
+// 					document.querySelector(".row").innerHTML+="<div id=\"lotto\">"+num+"</div>";
+// 					cnt+=1;
+// 				}			
+// 				if(cnt==6){
+// 		 			window.clearInterval(intervalId);
+// 		 		}
+// 			},1000);						
+// 	});	
+	$(function(){
+		$("button").on("click",function(){
+			let myLotto=[];		
+			let cnt=0;
+			let intervalId = setInterval(function(){					
+				let num = Math.floor(Math.random()*45)+1;	
+				if(myLotto.indexOf(num)===-1){
+					myLotto.push(num);
+					$(".row").append("<div id=\"lotto\">"+num+"</div>");
+					cnt+=1;
+				}			
+				if(cnt==6){
+		 			window.clearInterval(intervalId);
+		 		}
+			},1000);						
+		});
+	});
+	
+	
+</script>
+</html>

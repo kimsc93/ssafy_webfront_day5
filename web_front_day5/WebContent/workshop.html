@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	button{
+		width:40px;
+		height:40px;
+		margin : 3px;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+		<input type="text" id = "formular" style = "text-align:right;" placeholder=0.0>
+		<div id="pad">
+			<div id="row">
+				<button id="b7" class="num">7</button>
+				<button id="b8" class="num">8</button>
+				<button id="b9" class="num">9</button>
+				<button id="bp" class="oper">+</button>
+			</div>
+			<div id="row">
+				<button id="b4" class="num">4</button>
+				<button id="b5" class="num">5</button>
+				<button id="b6" class="num">6</button>
+				<button id="bm" class="oper">-</button>
+			</div>
+			<div class="row">
+				<button id="b1" class="num">1</button>
+				<button id="b2" class="num">2</button>
+				<button id="b3" class="num">3</button>
+				<button id="bmul" class="oper">*</button>
+			</div>
+			<div class="row">
+				<button id="b0" class="num">0</button>
+				<button id="bCE" class="num">CE</button>
+				<button id="bequal">=</button>
+				<button id="bdiv" class="oper">/</button>
+			</div>
+		</div>
+		<div>
+			<h2>결과 이력</h2>
+			<ul id="result">
+				
+			</ul>
+		</div>
+	</div>	
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$(".num, .oper").on("click",function(){         
+	         $("#formular").val($("#formular").val()+$(this).text());
+	    });
+		$("#bCE").on("click",function(){
+			$("#formular").val("");
+		});
+		$("#bequal").on("click",function(){
+			let form = $("#formular").val();
+			let num = eval(form);
+			$("#result").append("<li>"+form+"="+num);
+			$("#formular").val("");
+		});
+	});
+// 	let buttons = document.querySelectorAll(".num, .oper");
+// 	for(let button of buttons){
+// 		button.addEventListener("click",function(){
+// 			document.querySelector("#formular").value+=this.innerHTML;			
+
+
+// 		});
+// 	}
+// 	document.querySelector("#bCE").addEventListener("click",function(){
+// 		document.querySelector("#formular").value="";
+// 	});
+// 	document.querySelector("#bequal").addEventListener("click",function(){
+// 		let form = document.querySelector("#formular").value;
+// 		let num = eval(form);
+// 		document.querySelector("#result").innerHTML+="<li>"+form+"="+num;
+// 		document.querySelector("#formular").value="";
+// 	});
+</script>
+</html>
